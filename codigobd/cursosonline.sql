@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-12-2022 a las 01:32:16
+-- Tiempo de generación: 29-12-2022 a las 23:47:37
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -68,6 +68,15 @@ CREATE TABLE `genero` (
   `genero` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `genero`
+--
+
+INSERT INTO `genero` (`id`, `genero`) VALUES
+(1, 'femenino'),
+(2, 'masculino'),
+(3, 'otro');
+
 -- --------------------------------------------------------
 
 --
@@ -107,6 +116,14 @@ CREATE TABLE `roles` (
   `rol` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `rol`) VALUES
+(1, 'admin'),
+(2, 'user');
+
 -- --------------------------------------------------------
 
 --
@@ -129,6 +146,14 @@ CREATE TABLE `tiemposuscripcion` (
   `cantidadTiempo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tiemposuscripcion`
+--
+
+INSERT INTO `tiemposuscripcion` (`id`, `cantidadTiempo`) VALUES
+(1, '1 año'),
+(6, '6 meses');
+
 -- --------------------------------------------------------
 
 --
@@ -140,11 +165,18 @@ CREATE TABLE `usuario` (
   `nombres` varchar(45) NOT NULL,
   `apellidos` varchar(45) NOT NULL,
   `correo` varchar(45) NOT NULL,
-  `telefono` int(10) NOT NULL,
+  `telefono` int(11) NOT NULL,
   `fechaDeNacimiento` date NOT NULL,
   `pass` varchar(255) NOT NULL,
   `generoid` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nombres`, `apellidos`, `correo`, `telefono`, `fechaDeNacimiento`, `pass`, `generoid`) VALUES
+(1234, 'usuario', 'prueba', 'prueba@prueba.com', 0, '2022-12-29', '1234', 3);
 
 --
 -- Índices para tablas volcadas
@@ -245,7 +277,7 @@ ALTER TABLE `evaluaciones`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `notas`
@@ -263,19 +295,19 @@ ALTER TABLE `registrosuscripcion`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tiemposuscripcion`
 --
 ALTER TABLE `tiemposuscripcion`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
 
 --
 -- Restricciones para tablas volcadas
