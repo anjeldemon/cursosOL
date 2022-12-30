@@ -40,6 +40,19 @@ class ingreso {
     }
 
 
+    //mostra datos del perfil
+    public function datosUsuario($x)
+    {
+        
+        $c = new conectar();
+        $con = $c->conexion();
+        $sql1 = "SELECT * FROM usuario WHERE usuario.id ='".$x."'";
+        $result = mysqli_query($con,$sql1); 
+
+    return mysqli_fetch_all($result,MYSQLI_ASSOC);
+    }
+
+
 
 }
 
