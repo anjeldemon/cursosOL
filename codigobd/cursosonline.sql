@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-12-2022 a las 23:47:37
+-- Tiempo de generación: 31-12-2022 a las 00:18:23
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -176,7 +176,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombres`, `apellidos`, `correo`, `telefono`, `fechaDeNacimiento`, `pass`, `generoid`) VALUES
-(1234, 'usuario', 'prueba', 'prueba@prueba.com', 0, '2022-12-29', '1234', 3);
+(1234, 'usuario', 'prueba', 'prueba@prueba.com', 2147483647, '2022-12-29', '81dc9bdb52d04dc20036dbd8313ed055', 3),
+(5678, 'admin', 'prueba', 'prueba@prueba.com', 5678, '2022-12-30', '674f3c2c1a8a6f90461e8a66fb5550ba', 1);
 
 --
 -- Índices para tablas volcadas
@@ -307,7 +308,7 @@ ALTER TABLE `tiemposuscripcion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5679;
 
 --
 -- Restricciones para tablas volcadas
