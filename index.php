@@ -67,7 +67,7 @@
   
                             <!-- info -->
                             <div class="modal-body">
-                                <form action="" method="POST">
+                                <form action="controlador/registroNuevoUsuario.php" method="POST">
                                     <label for="idRegistro" class="col-form-label-sm">Número de identificación:</label>
                                     <input type="number" class="form-control" id="idRegistro" placeholder="Ingrese su número de id" name="idRegistro">
 
@@ -88,7 +88,7 @@
 
                                     <label for="genero" class="col-form-label-sm">Genero</label>
                                     <select id="genero" name="genero" class="form-select form-select-sm">
-                                        <option value="#">1</option>
+                                        <option value="1">1</option>
 
                                     </select>
                                     
@@ -97,7 +97,7 @@
   
                             <!-- acciones -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Registrarse</button>
+                                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Registrarse</button>
                                 </form>
                             </div>
   

@@ -28,6 +28,18 @@ class ingreso {
 
     // }
 
+    public function registro($datos){
+        
+        $con= new conectar();
+        $conexion=$con->conexion();
+        $query="INSERT INTO usuario (`id`, `nombres`, `apellidos`, `correo`, `telefono`, `fechaDeNacimiento`,`pass`,`generoid`)
+        VALUE ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$datos[4]','$datos[5]','$datos[6]','$datos[7]')";
+
+        return $resultado = mysqli_query($conexion, $query);
+        
+    }
+
+
 
 }
 
