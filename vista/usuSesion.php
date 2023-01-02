@@ -61,7 +61,7 @@ session_start();
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="usuSesion.php">
               <span data-feather="home"></span>
               Perfil
             </a>
@@ -98,7 +98,7 @@ session_start();
           </li>
         </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Saved reports</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle"></span>
@@ -129,7 +129,7 @@ session_start();
               Year-end sale
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
 
@@ -159,40 +159,44 @@ session_start();
           {
         ?>
 
+      <form action="../controlador/actualizarPerfil.php" method="POST">
         <div class="row">
-
           <div class="col-sm-6">
             <label for="nombres" class="col-form-label-sm">Nombres:</label>
-            <input type="text" id="nombres" class="form-control-plaintext col-sm-6" value=<?php echo $key['nombres'];?> >
+            <input type="text" id="nombres" name="nombres" class="form-control-plaintext col-sm-6" value=<?php echo $key['nombres'];?> >
           </div>
 
           <div class="col-sm-6">
             <label for="apellidos" class="col-form-label-sm">Apellidos:</label>
-            <input type="text" id="apellidos" class="form-control-plaintext col-sm-6" value=<?php echo $key['apellidos'];?> >
+            <input type="text" id="apellidos" name="apellidos" class="form-control-plaintext col-sm-6" value=<?php echo $key['apellidos'];?> >
           </div>
 
           <div class="col-sm-6">
             <label for="correo" class="col-form-label-sm">E-mail:</label>
-            <input type="text" id="correo" class="form-control-plaintext col-sm-6" value=<?php echo $key['correo'];?> >
+            <input type="email" id="correo" name="correo" class="form-control-plaintext col-sm-6" value=<?php echo $key['correo'];?> >
           </div>
 
           <div class="col-sm-6">
             <label for="telefono" class="col-form-label-sm">Telefono:</label>
-            <input type="text" id="telefono" class="form-control-plaintext col-sm-6" value=<?php echo $key['telefono'];?> >
+            <input type="number" id="telefono" name="telefono" class="form-control-plaintext col-sm-6" value=<?php echo $key['telefono'];?> >
           </div>
 
           <div class="col-sm-6">
             <label for="fechaDeNacimiento" class="col-form-label-sm">Fecha de nacimiento:</label>
-            <input type="date" id="fechaDeNacimiento" class="form-control-plaintext col-sm-6" value=<?php echo $key['fechaDeNacimiento'];?> >
+            <input type="date" id="fechaDeNacimiento" name="fechaDeNacimiento" class="form-control-plaintext col-sm-6" value=<?php echo $key['fechaDeNacimiento'];?> >
           </div>
 
           <div class="col-sm-6">
             <label for="generoid" class="col-form-label-sm">Genero:</label>
-            <input type="text" id="generoid" class="form-control-plaintext col-sm-6" value=<?php echo $key['generoid'];?> >
+            <input type="number" id="generoid" name="generoid" class="form-control-plaintext col-sm-6" value=<?php echo $key['generoid'];?> >
           </div>
 
+          <div id="btnActualizarPerfil" class="d-grid">
+              <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+          </div>
 
         </div>
+      </form>
 
         <?php } ?>
       </div>

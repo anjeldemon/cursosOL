@@ -28,6 +28,7 @@ class ingreso {
 
     // }
 
+    //registrar usuario nuevo
     public function registro($datos){
         
         $con= new conectar();
@@ -53,6 +54,17 @@ class ingreso {
     }
 
 
+
+    public function actalizarDatos($datos,$y){
+        $con = new conectar();
+        $conexion = $con->conexion();
+        $sql2 = "UPDATE usuario SET 
+        `nombres`='$datos[0]', `apellidos`='$datos[1]', `correo`='$datos[2]', `telefono`='$datos[3]', `fechaDeNacimiento`='$datos[4]',`generoid`='$datos[5]'
+        WHERE `id` ='".$y."'";
+
+        return mysqli_query($conexion,$sql2);
+    }
+    
 
 }
 
