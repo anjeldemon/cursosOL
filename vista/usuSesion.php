@@ -183,7 +183,7 @@ session_start();
 
           <div class="col-sm-6">
             <label for="fechaDeNacimiento" class="col-form-label-sm">Fecha de nacimiento:</label>
-            <input type="text" id="fechaDeNacimiento" class="form-control-plaintext col-sm-6" value=<?php echo $key['fechaDeNacimiento'];?> >
+            <input type="date" id="fechaDeNacimiento" class="form-control-plaintext col-sm-6" value=<?php echo $key['fechaDeNacimiento'];?> >
           </div>
 
           <div class="col-sm-6">
