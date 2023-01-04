@@ -175,9 +175,9 @@ session_start();
             <ul class="list-unstyled mt-3 mb-4">
               <li>ventajas</li>
             </ul>
-
-            <button type="button" class="w-100 btn btn-lg btn-primary">Suscribete</button>
-
+              <a href="../../controlador/seleccionPlan.php?user=<?php echo $_SESSION['user']?>&plan=180">
+                <button type="button" class="w-100 btn btn-lg btn-primary">Suscribete</button>
+              </a>
           </div>
         </div>
       </div>
