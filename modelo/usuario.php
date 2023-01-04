@@ -6,7 +6,12 @@ class ingreso {
     public function login($usuario,$clave){
         $con= new conectar();
         $conexion=$con->conexion();
-        $query="SELECT * FROM usuario WHERE id='$usuario' AND pass='$clave'";
+        $query="SELECT usuario.id, usuario.nombres, usuario.apellidos, usuario.correo, usuario.telefono, usuario.fechaDeNacimiento,usuario.generoid, roles.rol
+        FROM usuario
+        INNER JOIN roles_usuario on usuario.id = roles_usuario.usuarioid
+        INNER JOIN roles on roles_usuario.rolesid = roles.id
+        INNER JOIN genero on usuario.generoid = genero.id
+        WHERE usuario.id='$usuario' AND usuario.pass='$clave'";
 
         $consulta=$conexion->query($query);
 
@@ -14,19 +19,15 @@ class ingreso {
             $fila=$consulta->fetch_array(MYSQLI_ASSOC);
             session_start();
             $_SESSION['user']=$fila['id'];
+            $_SESSION['rol']=$fila['rol'];
             $_SESSION['nombre']=$fila['nombres'];
             return true;
             
         }else{
             return false;
         }}
-    //         header("Location: ../visual/empleado/empleado.php");
-    //     }else{
-    //         print "<script>alert(\"los datos no son correctos.\");
-    //         window.location='../ingresar.php';</script>";
-    //     }
+    
 
-    // }
 
     //registrar usuario nuevo
     public function registro($datos){
