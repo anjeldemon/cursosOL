@@ -50,7 +50,7 @@ session_start();
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="../controlador/signout.php">Sign out</a>
+      <a class="nav-link px-3" href="../../controlador/signout.php">Sign out</a>
     </div>
   </div>
 </header>
@@ -160,7 +160,7 @@ session_start();
             <ul class="list-unstyled mt-3 mb-4">
               <li>ventajas</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Gratis</button>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary" disabled>Gratis</button>
           </div>
         </div>
       </div>
@@ -171,11 +171,13 @@ session_start();
             <h4 class="my-0 fw-normal">Pro</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/6 meses</small></h1>
+            <h1 class="card-title pricing-card-title">$1<small class="text-muted fw-light">/6 meses</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li>ventajas</li>
             </ul>
+
             <button type="button" class="w-100 btn btn-lg btn-primary">Suscribete</button>
+
           </div>
         </div>
       </div>
@@ -186,18 +188,20 @@ session_start();
             <h4 class="my-0 fw-normal">Enterprise</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/12 meses</small></h1>
+            <h1 class="card-title pricing-card-title">$2<small class="text-muted fw-light">/12 meses</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li>ventajas</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Suscribete</button>
+              <a href="../../controlador/seleccionPlan.php?user=<?php echo $_SESSION['user']?>&plan=365">
+                <button type="button" class="w-100 btn btn-lg btn-primary">Suscribete</button>
+              </a>
           </div>
         </div>
       </div>
     </div>
 
     
-    </div>
+    
 
       
     

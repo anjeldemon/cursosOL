@@ -64,7 +64,30 @@ class ingreso {
 
         return mysqli_query($conexion,$sql2);
     }
+
+
+    public function suscribirse($datos){
+
+        $con= new conectar();
+        $conexion=$con->conexion();
+        $query="INSERT INTO `registrosuscripcion` (`fechaDeSuscripcion`, `fechaFinSuscripcion`, `usuarioid`, `tiempoSuscripcionid`)
+        VALUE ('$datos[0]','$datos[1]','$datos[2]','$datos[3]')";
+
+        return $resultado = mysqli_query($conexion, $query);
+
+
+    }
     
+
+    public function consultaSuscripcion($x){
+        $con = new conectar();
+        $conexion = $con->conexion();
+        $sql3 = "SELECT MAX(`fechaFinSuscripcion`) AS finSus FROM `registrosuscripcion` WHERE `usuarioid` = '".$x."' ORDER BY `fechaDeSuscripcion` DESC";
+        $result = mysqli_query($conexion, $sql3);
+
+        return mysqli_fetch_all($result,MYSQLI_ASSOC);
+    }
+
 
 }
 
