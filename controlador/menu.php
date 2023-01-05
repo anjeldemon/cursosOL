@@ -24,13 +24,26 @@ if ($rol) {
                 window.location='../vista/usuSesion.php';
                 </script>";
             break;
+
+        case 'usuarios':
+            print "<script>
+                window.location='../vista/admin/usuarios.php';
+                </script>";
+            break;
+
+        case 'reportes':
+            print "<script>
+                window.location='../vista/admin/reportes.php';
+                </script>";
+            break;
+
         default:
             print "<script>
                 window.location='../index.php';
                 </script>";
             break;
     }
-}else{
+} else {
     echo "no";
 }
 
