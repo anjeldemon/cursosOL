@@ -144,16 +144,16 @@ session_start();
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Perfil</h1>
-        <!-- <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#formCambioPass" >Cambio Contraseña</button>
+            
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             This week
-          </button>
-        </div> -->
+          </button> -->
+        </div>
       </div>
 
       <div class="container-fluid mt-3">
@@ -214,6 +214,42 @@ session_start();
     </main>
   </div>
 </div>
+
+<!-- modal -->
+<div class="modal" id="formCambioPass">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Cambio Contraseña</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+    <form action="" method="POST">
+        <div class="mb-4">
+          <label for="passActual" class="form-label">Contraseña Actual:</label>
+          <input type="password" class="form-control" id="passActual" placeholder="Ingrese su contraseña" name="passActual">
+        </div>
+        <div class="mb-4 mt-4">
+          <label for="passNuevo" class="form-label">Contraseña Nueva:</label>
+          <input type="password" class="form-control" id="passNuevo" placeholder="Ingrese su contraseña" name="passNuevo">
+        </div>
+        <div class="mt-4">
+          <label for="passNuevo2" class="form-label">Confirmar Contraseña:</label>
+          <input type="password" class="form-control" id="passNuevo2" placeholder="Ingrese su contraseña" name="passNuevo2">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Cambiar</button>
+    </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
