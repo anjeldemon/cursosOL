@@ -18,6 +18,8 @@ session_start();
     
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
     <style>
@@ -47,7 +49,7 @@ session_start();
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar por id." aria-label="Search" id="buscar">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
       <a class="nav-link px-3" href="../../controlador/signout.php">Sign out</a>
@@ -159,10 +161,10 @@ session_start();
       <h2>Base de usuario.</h2>
 
       <div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" id="tabla">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">id</th>
               <th scope="col">Nombres</th>
               <th scope="col">Apellidos</th>
               <th scope="col">Correo</th>
@@ -211,5 +213,6 @@ session_start();
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
       <script src="../../js/dashboard.js"></script>
+      <script src="../../js/busqueda.js"></script>
   </body>
 </html>
