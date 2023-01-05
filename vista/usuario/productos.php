@@ -61,19 +61,19 @@ session_start();
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../controlador/menu.php?opcion=perfil">
+            <a class="nav-link active" aria-current="page" href="../../controlador/menu.php?opcion=perfil">
               <span data-feather="home"></span>
               Perfil
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=cursos">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=cursos">
               <span data-feather="file"></span>
               Cursos
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=productos">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=productos">
               <span data-feather="shopping-cart"></span>
               Productos
             </a>
@@ -92,44 +92,44 @@ session_start();
         <ul class="nav flex-column mb-2">
 
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=usuarios">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=usuarios">
               <span data-feather="users"></span>
               Usuarios
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=reportes">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=reportes">
               <span data-feather="bar-chart-2"></span>
               Reportes
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=perfil">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=perfil">
               <span data-feather="layers"></span>
               Integrations
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=perfil">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=perfil">
               <span data-feather="file-text"></span>
               Current month
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=perfil">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=perfil">
               <span data-feather="file-text"></span>
               Last quarter
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=perfil">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=perfil">
               <span data-feather="file-text"></span>
               Social engagement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controlador/menu.php?opcion=perfil">
+            <a class="nav-link" href="../../controlador/menu.php?opcion=perfil">
               <span data-feather="file-text"></span>
               Year-end sale
             </a>
