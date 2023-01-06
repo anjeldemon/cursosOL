@@ -32,7 +32,7 @@ if($reg){
     window.location='../vista/usuSesion.php';</script>";
 }else{
     print"<script>alert(\"fallo al ingresar los datos.\");
-    window.location='../index.html';</script>";
+    window.location='../index.php';</script>";
 }
 
 
