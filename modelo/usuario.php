@@ -89,9 +89,22 @@ class ingreso {
         return mysqli_fetch_all($result,MYSQLI_ASSOC);
     }
 
-    public function cambioPass($actual,$nueva){
+    public function cambioPass($usuario,$actual,$nueva){
+        $con= new conectar();
+        $conexion=$con->conexion();
+        $query="SELECT usuario.id, usuario.pass FROM `usuario`
+        WHERE usuario.id='$usuario' AND usuario.pass='$actual'";
 
-        
+        $consulta=$conexion->query($query);
+
+        if ($consulta->num_rows==1) {
+            $query2 = "UPDATE usuario SET `pass`='$nueva'
+            WHERE `id` ='".$usuario."'";
+            return mysqli_query($conexion,$query2);
+        }else{
+            return false;
+        }
+
     }
 
 

@@ -4,15 +4,18 @@ require_once "../modelo/conexion.php";
 require_once "../modelo/usuario.php";
 
 $passActual = md5 ($_POST['passActual']);
-$passNuevo = $_POST['passNuevo'];
-$passNuevo2 = $_POST['passNuevo2'];
+$passNuevo2 = md5 ($_POST['passNuevo2']);
+$usuario = $_SESSION['user'];
+
+$obj = new ingreso();
 
 
-if ($passNuevo == $passNuevo2) {
-
-    echo "ok";
+if ($obj->cambioPass($usuario, $passActual, $passNuevo2)==1) {
+    print "<script>alert(\"Cambio realizado con exito, su sesion será finalizada\");
+        window.location='signout.php';</script>";
 }else{
-    
+    print "<script>alert(\"El cambio no fue realizado\");
+    window.location='../vista/usuSesion.php';</script>";
 }
 
 ?>
