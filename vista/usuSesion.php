@@ -16,7 +16,6 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -169,7 +168,7 @@ session_start();
           {
         ?>
 
-      <form action="../controlador/actualizarPerfil.php" method="POST">
+      <form id="formPerfil" action="../controlador/actualizarPerfil.php" method="POST">
         <div class="row">
           <div class="col-sm-6">
             <label for="nombres" class="col-form-label-sm">Nombres:</label>
@@ -201,8 +200,10 @@ session_start();
             <input type="number" id="generoid" name="generoid" class="form-control-plaintext col-sm-6" value=<?php echo $key['generoid'];?> >
           </div>
 
-          <div id="btnActualizarPerfil" class="d-grid">
+          <div style="display:none" id="btnActualizarPerfil">
+          <div class="d-grid" >
               <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+          </div>
           </div>
 
         </div>
@@ -258,7 +259,6 @@ session_start();
 
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>

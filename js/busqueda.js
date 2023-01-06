@@ -22,3 +22,11 @@ $("#passNuevo2").keyup(function(){
     
 
 });
+
+
+// activar acualizacion de datos de perfil
+$("#formPerfil").change(function(){
+   $("#btnActualizarPerfil").show();
+});
+
+
