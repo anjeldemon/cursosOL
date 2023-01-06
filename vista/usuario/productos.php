@@ -155,6 +155,21 @@ session_start();
           </button>
         </div> -->
       </div>
+      
+
+      <div class="col-sm-12 alert alert-info">
+      <?php 
+          require_once "../../modelo/conexion.php";
+          require_once "../../modelo/usuario.php";
+
+          $consulta = new ingreso();
+          $datos = $consulta->consultaSuscripcion($_SESSION['user']);
+
+          foreach ($datos as $key) {
+      ?>
+        <strong> <?php echo $key['plan'];?></strong> Tienes de suscripción... Finaliza el <?php echo $key['finSus'] ?>
+      <?php } ?>
+      </div>
 
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 

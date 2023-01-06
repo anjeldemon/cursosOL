@@ -83,7 +83,9 @@ class ingreso {
     public function consultaSuscripcion($x){
         $con = new conectar();
         $conexion = $con->conexion();
-        $sql3 = "SELECT MAX(`fechaFinSuscripcion`) AS finSus FROM `registrosuscripcion` WHERE `usuarioid` = '".$x."' ORDER BY `fechaDeSuscripcion` DESC";
+        $sql3 = "SELECT MAX(`fechaFinSuscripcion`) AS finSus, tiemposuscripcion.cantidadTiempo AS plan
+        FROM `registrosuscripcion`
+        INNER JOIN tiemposuscripcion ON registrosuscripcion.tiempoSuscripcionid = tiemposuscripcion.id WHERE `usuarioid` = '".$x."' ORDER BY `fechaDeSuscripcion` DESC";
         $result = mysqli_query($conexion, $sql3);
 
         return mysqli_fetch_all($result,MYSQLI_ASSOC);
