@@ -15,6 +15,20 @@ class administrador {
     return mysqli_fetch_all($result,MYSQLI_ASSOC);
     }
 
+    public function resetPass($x){
+        $c = new conectar();
+        $con = $c->conexion();
+        $sql2 = "UPDATE usuario SET 
+        `pass`= md5('$x')
+        WHERE `id` ='".$x."'";
+
+    return mysqli_query($con,$sql2);
+    }
+
+
+
+
+
 }
 
 

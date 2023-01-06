@@ -157,13 +157,19 @@ session_start();
           </button>
         </div> -->
       </div>
-
+      
       <h2>Base de usuario.</h2>
-
+      
       <div class="table-responsive">
+        
+        <form action="../../controlador/resetPass.php" method="POST">
+          
+        <button type="submit" class="btn btn-success">Reiniciar clave</button>
+          
         <table class="table table-striped table-sm" id="tabla">
           <thead>
             <tr>
+              <th scope="col">Select</th>
               <th scope="col">id</th>
               <th scope="col">Nombres</th>
               <th scope="col">Apellidos</th>
@@ -183,6 +189,7 @@ session_start();
           <tbody>
 
             <tr>
+            <td> <input type="checkbox" class="form-check-input" id="tablaUsu" name="tablaUsu[]" value=<?php echo $key['id'];?>></td>
               <td><?php echo $key['id'];?></td>
               <td><?php echo $key['nombres'];?></td>
               <td><?php echo $key['apellidos'];?></td>
@@ -196,6 +203,9 @@ session_start();
           <?php } ?>
           
         </table>
+
+      </form>
+
       </div>
 
     
