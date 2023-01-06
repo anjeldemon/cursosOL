@@ -89,6 +89,11 @@ class ingreso {
         return mysqli_fetch_all($result,MYSQLI_ASSOC);
     }
 
+    public function cambioPass($actual,$nueva){
+
+        
+    }
+
 
 }
 
