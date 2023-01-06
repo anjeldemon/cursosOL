@@ -6,10 +6,8 @@ class ingreso {
     public function login($usuario,$clave){
         $con= new conectar();
         $conexion=$con->conexion();
-        $query="SELECT usuario.id, usuario.nombres, usuario.apellidos, usuario.correo, usuario.telefono, usuario.fechaDeNacimiento,usuario.generoid, roles.rol
+        $query="SELECT usuario.id, usuario.nombres, usuario.apellidos, usuario.correo, usuario.telefono, usuario.fechaDeNacimiento,usuario.generoid, usuario.rol_id
         FROM usuario
-        INNER JOIN roles_usuario on usuario.id = roles_usuario.usuarioid
-        INNER JOIN roles on roles_usuario.rolesid = roles.id
         INNER JOIN genero on usuario.generoid = genero.id
         WHERE usuario.id='$usuario' AND usuario.pass='$clave'";
 
@@ -19,7 +17,7 @@ class ingreso {
             $fila=$consulta->fetch_array(MYSQLI_ASSOC);
             session_start();
             $_SESSION['user']=$fila['id'];
-            $_SESSION['rol']=$fila['rol'];
+            $_SESSION['rol']=$fila['rol_id'];
             $_SESSION['nombre']=$fila['nombres'];
             return true;
             
@@ -34,10 +32,12 @@ class ingreso {
         
         $con= new conectar();
         $conexion=$con->conexion();
-        $query="INSERT INTO usuario (`id`, `nombres`, `apellidos`, `correo`, `telefono`, `fechaDeNacimiento`,`pass`,`generoid`)
-        VALUE ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$datos[4]','$datos[5]','$datos[6]','$datos[7]')";
+        $query="INSERT INTO usuario (`id`, `nombres`, `apellidos`, `correo`, `telefono`, `fechaDeNacimiento`,`pass`,`generoid`,`rol_id`)
+        VALUE ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$datos[4]','$datos[5]','$datos[6]','$datos[7]',2)";
 
-        return $resultado = mysqli_query($conexion, $query);
+        $resultado = mysqli_query($conexion, $query);
+        
+        return $resultado;
         
     }
 

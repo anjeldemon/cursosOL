@@ -5,7 +5,7 @@ $rol = $_SESSION['rol'];
 
 $opcion = $_GET['opcion'];
 
-if ($rol) {
+// if ($rol==0) {
     switch ($opcion) {
         case 'cursos':
             print "<script>
@@ -43,8 +43,8 @@ if ($rol) {
                 </script>";
             break;
     }
-} else {
-    echo "no";
-}
+// } else {
+//     echo $rol;
+// }
 
 ?>
